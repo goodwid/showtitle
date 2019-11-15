@@ -28,17 +28,17 @@ bot.on('registered', () => {
 });
 
 bot.on('message', e => {
-  console.log(`<${e.nick}> ${e.message}`);
+  // console.log(`<${e.nick}> ${e.message}`);
   parse(e);
 });
 
 const parse = async (input) => {
   const { type, nick, ident, hostname, target, group, message, tags, time, account, reply } = input;
   if(message.includes('http')) {
-    console.log('http detected, parsing. . .');
+    // console.log('http detected, parsing. . .');
     const msgBits = message.split(' ');
     const links = msgBits.filter(isUrl);
-    console.log(links);
+    // console.log(links);
     if(links.length > 0) {
       const title = await getTitle(links[0])
       bot.action(target, `<Title> ${title}`);
@@ -48,6 +48,6 @@ const parse = async (input) => {
 
 const toChannel = (text, name) => {
   const channel = channels.find(c => c.name === name);
-  console.log(channel);
+  // console.log(channel);
   channel.say(text);
 };
