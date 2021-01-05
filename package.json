@@ -12,7 +12,7 @@
     "start:watch": "nodemon index.js"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "irc-framework": "^4.5.2",
     "is-http-url": "^2.0.0",
